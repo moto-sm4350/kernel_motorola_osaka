@@ -407,11 +407,9 @@ static int wled_sync_toggle(struct wled *wled)
 	if (rc < 0)
 		return rc;
 
-	rc = regmap_update_bits(wled->regmap,
+	return regmap_update_bits(wled->regmap,
 			wled->sink_addr + WLED_SINK_SYNC,
 			WLED_SINK_SYNC_MASK, WLED_SINK_SYNC_MASK);
-
-	return rc;
 }
 
 static int wled5_sample_hold_control(struct wled *wled, u16 brightness,
@@ -498,7 +496,6 @@ static int wled5_set_brightness(struct wled *wled, u16 brightness)
 	rc = regmap_update_bits(wled->regmap,
 			wled->sink_addr + WLED5_SINK_MOD_SYNC_BIT_REG,
 			WLED5_SINK_SYNC_MASK, val);
-	return rc;
 }
 
 static int wled4_set_brightness(struct wled *wled, u16 brightness)
