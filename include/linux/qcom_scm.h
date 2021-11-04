@@ -203,6 +203,7 @@ extern int qcom_scm_invoke_callback_response(phys_addr_t out_buf,
 		size_t out_buf_size, int32_t *result, u64 *response_type,
 		unsigned int *data);
 extern bool qcom_scm_is_available(void);
+extern int qcom_scm_mem_protect_audio(phys_addr_t paddr, size_t size);
 #else
 
 #include <linux/errno.h>
@@ -379,5 +380,7 @@ static inline int qcom_scm_invoke_callback_response(phys_addr_t out_buf,
 		size_t out_buf_size, int32_t *result, u64 *request_type,
 		unsigned int *data)	{ return -ENODEV; }
 static inline bool qcom_scm_is_available(void) { return false; }
+static inline int qcom_scm_mem_protect_audio(phys_addr_t paddr, size_t size)
+				{ return -ENODEV; }
 #endif
 #endif
