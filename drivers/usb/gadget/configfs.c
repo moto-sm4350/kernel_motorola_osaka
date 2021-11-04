@@ -336,7 +336,9 @@ static ssize_t gadget_dev_desc_UDC_store(struct config_item *item,
 				goto err;
 			}
 		}
+#ifdef CONFIG_USB_CONFIGFS_UEVENT
 		schedule_work(&gi->work);
+#endif
 	}
 	mutex_unlock(&gi->lock);
 	return len;
