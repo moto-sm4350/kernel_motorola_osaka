@@ -1730,7 +1730,7 @@ composite_setup(struct usb_gadget *gadget, const struct usb_ctrlrequest *ctrl)
 				if (gadget->speed >= USB_SPEED_SUPER) {
 					cdev->desc.bcdUSB = cpu_to_le16(0x0320);
 					cdev->desc.bMaxPacketSize0 = 9;
-				} else {
+				} else if (gadget->lpm_capable) {
 					cdev->desc.bcdUSB = cpu_to_le16(0x0210);
 				} else {
 					cdev->desc.bcdUSB = cpu_to_le16(0x0200);

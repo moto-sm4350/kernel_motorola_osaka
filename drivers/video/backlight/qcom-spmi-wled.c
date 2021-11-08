@@ -521,6 +521,7 @@ static int wled5_set_brightness(struct wled *wled, u16 brightness)
 	rc = regmap_update_bits(wled->regmap,
 			wled->sink_addr + WLED5_SINK_MOD_SYNC_BIT_REG,
 			WLED5_SINK_SYNC_MASK, val);
+	return rc;
 }
 
 static int wled4_set_brightness(struct wled *wled, u16 brightness)
