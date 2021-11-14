@@ -49,7 +49,7 @@ struct freq_tbl *qcom_find_freq(const struct freq_tbl *f, unsigned long rate)
 	/* Default to our fastest rate */
 	return f - 1;
 }
-EXPORT_SYMBOL_GPL(qcom_find_freq);
+EXPORT_SYMBOL(qcom_find_freq);
 
 const struct freq_tbl *qcom_find_freq_floor(const struct freq_tbl *f,
 					    unsigned long rate)
