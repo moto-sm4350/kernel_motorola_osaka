@@ -2,7 +2,7 @@
 # Automatically generated file; DO NOT EDIT.
 # Linux/arm64 5.4.134 Kernel Configuration
 #
-CONFIG_CC_VERSION_TEXT="aarch64-elf-gcc (Eva GCC) 12.0.0 20210701 (experimental)"
+CONFIG_CC_VERSION_TEXT="aarch64-elf-gcc (Eva GCC) 12.0.0 20211125 (experimental)"
 CONFIG_CC_IS_GCC=y
 CONFIG_GCC_VERSION=120000
 CONFIG_CLANG_VERSION=0
@@ -6018,7 +6018,11 @@ CONFIG_LSM="lockdown,yama,loadpin,safesetid,integrity,selinux,smack,tomoyo,appar
 #
 # Memory initialization
 #
+CONFIG_CC_HAS_AUTO_VAR_INIT_PATTERN=y
+CONFIG_CC_HAS_AUTO_VAR_INIT_ZERO=y
 CONFIG_INIT_STACK_NONE=y
+# CONFIG_INIT_STACK_ALL_PATTERN is not set
+# CONFIG_INIT_STACK_ALL_ZERO is not set
 CONFIG_INIT_ON_ALLOC_DEFAULT_ON=y
 # CONFIG_INIT_ON_FREE_DEFAULT_ON is not set
 # end of Memory initialization
