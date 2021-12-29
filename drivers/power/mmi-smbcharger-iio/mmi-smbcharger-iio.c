@@ -72,7 +72,7 @@
 
 #define mmi_info(chg, fmt, ...)					\
 	do {							\
-		pr_info("%s: %s: %s: " fmt, chg->name,		\
+		pr_debug("%s: %s: %s: " fmt, chg->name,		\
 		       MODULE_LOG, __func__, ##__VA_ARGS__);	\
 		ipc_log_string(chg->ipc_log,			\
 		"INFO:%s: " fmt, __func__, ##__VA_ARGS__); 	\
@@ -81,7 +81,7 @@
 #define mmi_dbg(chg, fmt, ...)						\
 	do {								\
 		if (*chg->debug_enabled)				\
-			pr_info("%s: %s: %s: " fmt, chg->name,		\
+			pr_debug("%s: %s: %s: " fmt, chg->name,		\
 				MODULE_LOG, __func__, ##__VA_ARGS__);	\
 		else							\
 			pr_debug("%s: %s: %s: " fmt, chg->name,		\
